@@ -3,8 +3,7 @@ import {Link} from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql } from "gatsby"
 
-// import styles from '../components/css/products.module.css'
-
+import * as styles from '../components/css/products.module.css';
 
 const getData = graphql`
 query retrieveServices {
@@ -15,6 +14,9 @@ query retrieveServices {
       price
       slug
       shortDescription
+      image {
+        gatsbyImageData
+      }
     }
   }
 }
@@ -22,22 +24,20 @@ query retrieveServices {
 
 const Services = () => {
   const data = useStaticQuery(getData);
-  console.log(data)
+  // console.log(data)
     const {
         allContentfulServices: {nodes:services}
     } = data
-    console.log(services)
     return <>
-        <section 
-        //className={styles.page} 
-        id="services">
+        <section className={styles.page} id="services">
           <h2> My Services</h2>
           <div className="wrapper">
           {
             services.map( (service) => {
                 const {title, price, slug, id, shortDescription} = service
+                const image = getImage(service.image);
                 return <article key={id}>
-                    {/* <Image fluid={image.fluid} alt={title}></Image> */}
+                    <GatsbyImage image={image} alt={`${title} image`} />
                       <h3>{title}
                           <span>${price}/hour</span>
                       </h3>
