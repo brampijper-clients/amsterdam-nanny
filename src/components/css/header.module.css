@@ -1,0 +1,38 @@
+.page {
+    height: auto;
+    margin: 0 auto;
+    background-color: #5CDB95;
+    margin-bottom: 4rem;
+    padding: 5rem 0rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items:center;
+}
+
+.page h1 {
+    color: #EDF5E1;
+    font-size: 6rem;
+    margin: 0 0 2rem 0;
+    padding: 0;
+}
+
+.page h3 {
+    color: #EDF5E1;
+}
+
+@media screen and (min-width: 768px) {
+    .page div {
+        max-width: 650px;
+        margin-left: 5rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .page {
+        padding: 4rem 2rem;
+    }
+    .page h1 {
+        font-size: 3.5rem;
+    }
+}

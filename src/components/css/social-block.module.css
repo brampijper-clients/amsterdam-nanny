@@ -1,0 +1,38 @@
+.page {
+    height: auto;
+    margin-bottom: 4rem;
+}
+
+.page h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+}
+
+.page article {
+    margin: 2rem 0;
+    max-width: 200px;
+}
+
+.headlinebg {
+    margin: 0 auto;
+    max-width: 92vw;
+    margin-top: 8rem;
+    background-color: white;
+}
+
+@media screen and (min-width: 768px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: .2rem;
+        row-gap: .2rem;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .headlinebg { 
+        max-width: 75vw;
+    }
+}

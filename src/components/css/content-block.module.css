@@ -1,0 +1,48 @@
+.page {
+    height: auto;
+    margin: 0 auto;
+    padding: 5rem;
+    background-color:#05386B;
+    margin-bottom: 8rem;
+    border: 1px solid #5CDB95;
+    text-transform:lowercase;
+    margin-bottom: 4rem;
+}
+
+.page h2 {
+    color: #5CDB95;
+    font-size: 6rem;
+    padding: 0;
+    margin-bottom: 2rem;
+    text-align:center;
+}
+
+.page article {
+    display:grid;
+    column-gap:3rem;
+    grid-auto-columns: auto;
+    justify-content: center;
+
+}
+
+.page p { 
+    color: whitesmoke;
+    font-size: 1.7rem;
+    margin: 1.5rem 0;
+    max-width: 600px;
+}
+
+@media screen and (max-width: 768px) {
+    .page {
+        padding: 4rem 2rem;
+    }
+
+    .page h2 {
+        font-size: 4rem;
+    }
+
+    .page p {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+}
