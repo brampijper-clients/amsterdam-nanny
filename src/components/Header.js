@@ -8,6 +8,7 @@ const getData = graphql`
 query getHeadline {
     contentfulHeader {
         headline
+        headlineButtonText
       }
     }
 `
@@ -15,14 +16,14 @@ query getHeadline {
 const Header = () => {
     const data = useStaticQuery(getData)
     const {
-        contentfulHeader: {headline}
+        contentfulHeader: {headline, headlineButtonText: btnText}
     } = data
 
     return (
         <section className={styles.page} id="header">
             <div>
                 <h1>{headline}</h1>
-                <Button>Contact me for more info</Button>
+                <Button>{btnText}</Button>
             </div>
       </section>
     )
