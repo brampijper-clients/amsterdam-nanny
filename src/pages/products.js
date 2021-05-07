@@ -24,7 +24,6 @@ query retrieveServices {
 
 const Services = () => {
   const data = useStaticQuery(getData);
-  // console.log(data)
     const {
         allContentfulServices: {nodes:services}
     } = data
@@ -42,7 +41,7 @@ const Services = () => {
                           <span>${price}/hour</span>
                       </h3>
                       <p>{shortDescription}</p>
-                    <Link to={`/products/${slug}`}>More details</Link>
+                    <Link to={`/products/${slug}`}>{`More details about ${title}`}</Link>
                 </article>
             })
           }

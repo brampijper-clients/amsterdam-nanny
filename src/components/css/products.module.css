@@ -1,5 +1,4 @@
 .page {
-    text-transform: capitalize;
     margin: 0 auto;
     height: auto;
     margin-bottom: 4rem;
@@ -33,6 +32,16 @@
 .page article p {
     margin-bottom: 1rem;
 }
+
+.page article a {
+    display:block;
+    text-transform:lowercase;
+}
+
+.page article a:first-letter {
+    text-transform: capitalize;
+}
+
 
 .page span {
     margin-left: 2rem;
