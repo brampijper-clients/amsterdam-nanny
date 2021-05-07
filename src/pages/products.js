@@ -7,7 +7,7 @@ import * as styles from '../components/css/products.module.css';
 
 const getData = graphql`
 query retrieveServices {
-  allContentfulServices {
+  allContentfulService {
     nodes {
       id
       title
@@ -25,7 +25,7 @@ query retrieveServices {
 const Services = () => {
   const data = useStaticQuery(getData);
     const {
-        allContentfulServices: {nodes:services}
+        allContentfulService: {nodes:services}
     } = data
     return <>
         <section className={styles.page} id="services">

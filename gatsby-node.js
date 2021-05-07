@@ -6,7 +6,7 @@ exports.createPages = async ({graphql, actions}) => {
     const {createPage} = actions
     const result = await graphql(`
     query GetProducts {
-        products: allContentfulServices {
+        products: allContentfulService {
           nodes {
             slug
           }
