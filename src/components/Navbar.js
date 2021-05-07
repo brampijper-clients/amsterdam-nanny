@@ -1,10 +1,27 @@
 import React, {useState} from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import * as styles from './css/navbar.module.css'
 
+const getData = graphql`
+query getMenu {
+    contentfulHomepage {
+        logo {
+            gatsbyImageData(
+                placeholder: BLURRED
+                layout: FIXED
+            )
+        }
+    }
+}
+`
+
 const Navbar = () => {
+    const data = useStaticQuery(getData);
+    const { contentfulHomepage: { logo } } = data;
+    const image = getImage(logo);
 
     // setShowMenu is the method that will change the variable showMenu. Initially you have to set a state.
     // which is currently false, because you don't want to display when loading.
@@ -54,13 +71,10 @@ const Navbar = () => {
 
     return (
         <nav className={styles.page}>
-
-            <StaticImage
-                src="../images/logo.png"
-                alt="Nanny logo Amsterdam"
-                placeholder="blurred"
-                height={100}
-            />
+            
+            <Link to='/'>
+                <GatsbyImage image={image} alt='Amsterdam Nanny logo' />
+            </Link>
 
             {desktopNavbar}
 
