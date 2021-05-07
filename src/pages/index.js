@@ -4,7 +4,7 @@ import React from "react"
 import Layout from '../components/layout' 
 import Header from '../components/Header'
 import Services from './products'
-import ContentBlock from '../components/contentBlock'
+import AboutMe from '../components/aboutMe'
 import SocialBlock from '../components/socialBlock'
 
 
@@ -14,7 +14,7 @@ const Home = () => (
     <div className="page-wrap">
       <Header />
       <Services />
-      <ContentBlock />
+      <AboutMe />
     </div>
 
     <SocialBlock />
