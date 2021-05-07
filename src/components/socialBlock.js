@@ -1,5 +1,5 @@
 import React from 'react'
-// import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 // import Image from 'gatsby-image'
 
 import * as styles from './css/social-block.module.css'
@@ -22,8 +22,17 @@ import * as styles from './css/social-block.module.css'
 //   }
 // `
 
+const getData = graphql`
+query getInstagramTitle {
+    content: contentfulHomepage {
+        title: instagramTitle
+    }
+}
+`
+
 const ContentBlock = () => {
-    // const data = useStaticQuery(getData);
+    const data = useStaticQuery(getData);
+    const { content: {title}} = data
     // const {
     //     allInstagramContent: {nodes}
     // } = data
@@ -32,7 +41,7 @@ const ContentBlock = () => {
     return (
         <section className={styles.page} id="instagram">
             <div className={styles.headlinebg}>
-                <h2> Instagram vibes </h2>
+                <h2>{title}</h2>
             </div>
             <div className={styles.gallery}>
                 {/* {
