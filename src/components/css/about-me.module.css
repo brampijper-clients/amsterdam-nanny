@@ -5,7 +5,7 @@
     background-color:#05386B;
     margin-bottom: 8rem;
     border: 1px solid #5CDB95;
-    text-transform:lowercase;
+    /* text-transform:lowercase; */
     margin-bottom: 4rem;
 }
 
@@ -22,7 +22,6 @@
     column-gap:3rem;
     grid-auto-columns: auto;
     justify-content: center;
-
 }
 
 .page p { 
