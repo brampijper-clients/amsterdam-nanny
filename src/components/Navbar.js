@@ -2,38 +2,39 @@ import React, {useState} from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql, Link } from "gatsby"
+import NavigationHamburger from './NavigationHamburger';
 
 import * as styles from './css/navbar.module.css'
 
 const getData = graphql`
-query getMenu {
+query getLogo {
     contentfulHomepage {
         logo {
             gatsbyImageData(
                 placeholder: BLURRED
-                layout: FIXED
+                layout: CONSTRAINED
             )
         }
     }
 }
 `
 
-const Navbar = () => {
+const Navbar = ({hideMenu}) => {
     const data = useStaticQuery(getData);
     const { contentfulHomepage: { logo } } = data;
     const image = getImage(logo);
 
-    // setShowMenu is the method that will change the variable showMenu. Initially you have to set a state.
-    // which is currently false, because you don't want to display when loading.
+    const [showMenu, setShowMenu] = useState(false);
 
-    const [showMenu, setShowMenu] = useState(false)
+    const handleClick = () => {
+        setShowMenu(!showMenu);
+    }
 
-    let mobileNavbar, desktopNavbar
+    let mobileNavbar, desktopNavbar, hamburgerIcon
 
-    if(showMenu) {
+    if(showMenu && !hideMenu) {
         mobileNavbar = 
-        <div className={styles.mobile}>
-            <ul onClick={ () => setShowMenu(!showMenu)}>
+            <ul  className={styles.mobile} onClick={ () => setShowMenu(!showMenu)}>
                 <li>
                     <button onClick={ () => scrollTo('#header')}>home</button>
                 </li>
@@ -47,12 +48,11 @@ const Navbar = () => {
                     <button onClick={ () => scrollTo('#instagram')}>instagram</button>
                 </li>
             </ul>
-        </div>
     } 
     
-    else {
+    else if (!hideMenu) {
         desktopNavbar =
-        <ul>
+        <ul className={styles.navbar}>
             <li>
                 <button onClick={ () => scrollTo('#header')}>home</button>
             </li>
@@ -67,24 +67,27 @@ const Navbar = () => {
             </li>
         </ul>
     }
+
+    if (!hideMenu) {
+        hamburgerIcon =
+        <div className={styles.hamburger}>
+            <NavigationHamburger showMenu={showMenu} onClick={handleClick} />
+        </div>
+    }
         
 
     return (
         <nav className={styles.page}>
             
-            <Link to='/'>
-                <GatsbyImage image={image} alt='Amsterdam Nanny logo' />
+            <Link to='/' >
+                <GatsbyImage className={styles.image} image={image} alt='Amsterdam Nanny logo' />
             </Link>
-
+            
             {desktopNavbar}
-
             {mobileNavbar}
+            {hamburgerIcon}
 
-            <span className={` ${styles.hamburger}`} aria-hidden="true" onClick={() => setShowMenu(!showMenu)}>
-                =
-            </span>
         </nav>
     )
 }
-
 export default Navbar
