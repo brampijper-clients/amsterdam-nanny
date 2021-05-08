@@ -9,7 +9,7 @@ import * as styles from '../components/css/single-product.module.css'
 const productTemplate = ({ data: {product: {title, price, buttonText, image,  longDescription:{longDescription}}}}) => {
     const productImage = getImage(image);
     return (
-        <Layout>
+        <Layout hideMenu={true}>
             <section 
                 className={styles.page}
             >

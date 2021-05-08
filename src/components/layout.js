@@ -4,10 +4,10 @@ import Footer from './Footer'
 import './css/layout.css'
 
 
-const layout = ({children}) => {
+const layout = ({children, hideMenu}) => {
     return (
         <>
-            <Navbar/>
+            <Navbar hideMenu={hideMenu}/>
             <main>
                 {children}
             </main>

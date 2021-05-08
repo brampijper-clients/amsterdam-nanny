@@ -18,7 +18,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-smoothscroll`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -28,10 +27,10 @@ module.exports = {
       __key: "images",
     },
     {
-      resolve: `gatsby-source-instagram`,
+      resolve: "gatsby-plugin-anchor-links",
       options: {
-        username: `8556131572`,
-      },
+        offset: -150
+      }
     },
   ],
 };

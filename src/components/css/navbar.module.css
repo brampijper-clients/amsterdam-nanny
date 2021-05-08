@@ -9,18 +9,7 @@
     justify-content: space-between;
 }
 
-.page svg {
-    height: 100%;
-}
-
-.page div {
-    display: grid;
-    align-items: center;
-    padding-right: 5vw;
-}
-
-
-.page ul {
+.navbar {
     height: 100%;
     display:flex;
     justify-content: flex-end;
@@ -31,16 +20,11 @@
     margin-right: 5vw;
 }
 
-.page ul li {
+.navbar li {
     padding: 0 .4rem;
 }
 
-.page ul li a {
-    text-decoration: none;
-    color: whitesmoke;
-}
-
-.page li button {
+button, a  {
     border: none;
     background: none;
     cursor: pointer;
@@ -48,83 +32,57 @@
     color:  #1d3d51;
     font-weight: 600;
     transition: .4s;
+    text-decoration: none;
 }
 
-.page li button:hover {
+.navbar li a:hover, .mobile li a:hover {
     color: #5CDB95;
 }
 
 .hamburger {
+    z-index:10;
     display:none;
-    width: 120px;
-    height: 28px;
-    align-self: center;
-    text-align:center;
-    font-size: 1.6rem;
-    cursor: pointer;
 }
 
-@media screen and (max-width: 768px){
-    /* 
-    .page {
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
+.mobile {
+    display:none;
+}
 
-    .page ul {
-        flex-direction: column;
-        justify-content:center;
-    }
+@media screen and (max-width: 768px) {
 
-    .page ul li {
-        padding-top: 1rem;
-    }
-
-    .page svg {
+    .image {
+        max-width:285px;
         height: auto;
     }
-
-    .page button {
-        display:flex; 
-    } 
-    */
-
+    
     .hamburger {
         display:block;
-        z-index:3;
+        align-self:center;
+        margin-right:2rem;
     }
 
-    .page ul {
+    .navbar {
         display: none;
     }
 
-    .page svg {
-        z-index:4;
-    }
-
     .mobile {
-        z-index:3;
-        background-color: whitesmoke;
-        opacity: 0.9;
-        height: 100vh;
-        width: 100vw;
-        position: absolute;
-    }
-
-    .mobile ul {
         display:flex;
+        position:absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color:whitesmoke;
+        opacity: 0.9;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        list-style-type: none;
     }
 
-    .mobile ul li { 
+    .mobile li { 
         margin: 1.6rem 0;
     }
 
-    .mobile ul li button {
+    .mobile li a {
         font-size: 2rem;
     }
 }
