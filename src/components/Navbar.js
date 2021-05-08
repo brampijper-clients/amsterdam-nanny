@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import scrollTo from 'gatsby-plugin-smoothscroll'
+import {AnchorLink} from 'gatsby-plugin-anchor-links'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql, Link } from "gatsby"
-import NavigationHamburger from './NavigationHamburger';
+import NavigationHamburger from './NavigationHamburger'
 
 import * as styles from './css/navbar.module.css'
 
@@ -36,16 +36,16 @@ const Navbar = ({hideMenu}) => {
         mobileNavbar = 
             <ul  className={styles.mobile} onClick={ () => setShowMenu(!showMenu)}>
                 <li>
-                    <button onClick={ () => scrollTo('#header')}>home</button>
+                    <AnchorLink to="/#header" title="home" />
                 </li>
                 <li>
-                    <button onClick={ () => scrollTo('#services')}>products</button>
+                    <AnchorLink to="/#services" title="services" />
                 </li>
                 <li>
-                    <button onClick={ () => scrollTo('#aboutme')}>about me</button>
+                    <AnchorLink to="/#aboutme" title="about me" />
                 </li>
                 <li>
-                    <button onClick={ () => scrollTo('#instagram')}>instagram</button>
+                    <AnchorLink to="/#instagram" title="instagram" />
                 </li>
             </ul>
     } 
@@ -54,16 +54,16 @@ const Navbar = ({hideMenu}) => {
         desktopNavbar =
         <ul className={styles.navbar}>
             <li>
-                <button onClick={ () => scrollTo('#header')}>home</button>
+                <AnchorLink to="/#header" title="home" />
             </li>
             <li>
-                <button onClick={ () => scrollTo('#services')}>products</button>
+                <AnchorLink to="/#services" title="services" />
             </li>
             <li>
-                <button onClick={ () => scrollTo('#aboutme')}>about me</button>
+                <AnchorLink to="/#aboutme" title="about me" />
             </li>
             <li>
-                <button onClick={ () => scrollTo('#instagram')}>instagram</button>
+                <AnchorLink to="/#instagram" title="instagram" />
             </li>
         </ul>
     }

@@ -24,12 +24,7 @@
     padding: 0 .4rem;
 }
 
-.navbar li a {
-    text-decoration: none;
-    color: whitesmoke;
-}
-
-button  {
+button, a  {
     border: none;
     background: none;
     cursor: pointer;
@@ -37,9 +32,10 @@ button  {
     color:  #1d3d51;
     font-weight: 600;
     transition: .4s;
+    text-decoration: none;
 }
 
-.navbar li button:hover, .mobile li button:hover {
+.navbar li a:hover, .mobile li a:hover {
     color: #5CDB95;
 }
 
@@ -86,7 +82,7 @@ button  {
         margin: 1.6rem 0;
     }
 
-    .mobile li button {
+    .mobile li a {
         font-size: 2rem;
     }
 }
