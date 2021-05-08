@@ -18,7 +18,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-smoothscroll`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -26,6 +25,12 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -150
+      }
     },
   ],
 };
