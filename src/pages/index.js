@@ -9,7 +9,7 @@ import SocialBlock from '../components/socialBlock'
 
 
 const Home = () => (
-  <Layout>
+  <Layout hideMenu={false}>
 
     <div className="page-wrap">
       <Header />
