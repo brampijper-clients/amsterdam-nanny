@@ -9,17 +9,46 @@
     row-gap: 1rem; 
 }
 
-@media screen and (min-width: 768px){
+.page article h1 {
+    color: black;
+    font-size: 2rem;
+}
+
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.page article p {
+    margin: 1.5rem 0;
+    font-size: 1.4rem;
+    line-height: 1.4em;
+}
+
+@media screen and (min-width: 992px){
     .page {
         display:grid;
-        grid-template-columns: 1fr 2fr;
-        column-gap: 2rem;
-        padding-top:3rem;
+        grid-template-columns: 1.5fr 2fr;
+        column-gap: 8em;
+    }
+
+    .page article {
+        row-gap: 2rem;
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .page article {
         margin-bottom: 1.5rem;
+    }
+
+    .wrap {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .wrap h1 {
+        margin-bottom: 1rem;
     }
 }
