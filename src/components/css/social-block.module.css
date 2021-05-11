@@ -14,6 +14,10 @@
     max-width: 200px;
 }
 
+.gallery a {
+    display: inherit;
+    text-decoration: none;
+}
 .headlinebg {
     margin: 0 auto;
     max-width: 92vw;
