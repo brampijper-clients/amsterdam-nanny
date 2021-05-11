@@ -2,6 +2,9 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+//fix for cache issue gatsby instagram
+process.env.GATSBY_CONCURRENT_DOWNLOAD = 1;
+
 module.exports = {
   siteMetadata: {
     title: "Amsterdam Nanny",
@@ -37,6 +40,6 @@ module.exports = {
       options: {
         access_token: process.env.INSTAGRAM_ACCESS_TOKEN,
       }
-    }
+    },
   ],
 };
