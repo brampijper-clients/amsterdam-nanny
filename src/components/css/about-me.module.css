@@ -1,16 +1,17 @@
+@import './colors.css';
+
 .page {
     height: auto;
     margin: 0 auto;
     padding: 5rem;
-    background-color:#05386B;
+    background-color:var(--primary);
     margin-bottom: 8rem;
-    border: 1px solid #5CDB95;
-    /* text-transform:lowercase; */
+    border: 1px solid var(--secondary);
     margin-bottom: 4rem;
 }
 
 .page h2 {
-    color: #5CDB95;
+    color: var(--secondary);
     font-size: 6rem;
     padding: 0;
     margin-bottom: 2rem;

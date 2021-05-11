@@ -1,7 +1,9 @@
+@import "./colors.css";
+
 .page {
     height: auto;
     margin: 0 auto;
-    background-color: #5CDB95;
+    background-color: var(--primary);
     margin-bottom: 4rem;
     padding: 5rem 0rem;
     display: grid;
@@ -10,14 +12,10 @@
 }
 
 .page h1 {
-    color: #EDF5E1;
+    /* color: #EDF5E1; */
     font-size: 6rem;
     margin: 0 0 2rem 0;
     padding: 0;
-}
-
-.page h3 {
-    color: #EDF5E1;
 }
 
 @media screen and (min-width: 768px) {
