@@ -1,26 +1,29 @@
 import React from 'react'
 import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import MarkdownView from 'react-showdown';
 
 import Layout from '../components/layout'
 import Button from '../components/button'
 import * as styles from '../components/css/single-product.module.css'
 
-const productTemplate = ({ data: {product: {title, price, buttonText, image,  longDescription:{longDescription}}}}) => {
+const productTemplate = ({ data: {product: {title, price, buttonText, image,  description:{text}}}}) => {
     const productImage = getImage(image);
     return (
         <Layout hideMenu={true}>
-            <section 
-                className={styles.page}
-            >
+            <section className={styles.page}>
                 <article>
                     <GatsbyImage image={productImage} alt={`${title} image`} />
-                    <Link to="/">back to Home</Link>
+                    <div>
+                        <Link to="/">back to Home</Link>
+                    </div>
                 </article>
                 <article>
-                    <h1>{title}</h1>
-                    <h3>${price}</h3>
-                    <p>{longDescription}</p>
+                    <div className={styles.wrap}>
+                        <h1>{title}</h1>
+                        <h3>&euro;{price}/hour</h3>
+                    </div>
+                    <MarkdownView markdown={text} />
                     <Button secondary>{buttonText} </Button>
                 </article>
             </section>
@@ -34,8 +37,8 @@ export const query = graphql`
           title
           price
           buttonText
-          longDescription {
-            longDescription
+          description: childContentfulServiceLongDescriptionTextNode {
+            text: longDescription
           }
           image {
               gatsbyImageData
