@@ -10,20 +10,27 @@ const StyledButton = styled.button`
     transition: all .5s;
     color: #EDF5E1;
     border: 1px solid #EDF5E1;
-
-    ${({secondary}) => secondary && css`
-        padding: .8rem;
-        font-size: 1rem;
-        color: black;
-        border: 1px solid black;
-    `}
+    font-weight: bold;
 
     &:hover {
-        color: #fff;
-        background: #1d3d51;
+        color: #1d3d51;
+        background: #FFF;
         text-decoration: none;
         border: 1px solid #1d3d51;
     }
+
+    ${({secondary}) => secondary && css`
+        padding: .8rem;
+        font-size: 1.3rem;
+        color: white;
+        border: 1px solid black;
+        background: black;
+
+        &:hover {
+            color: #05386B;
+            background: #f5f5f5;
+        }
+    `}
 `
 
 // hardcoded email here? not good I guess? Also EVERY button will now have the onclick, maybe pass it as a prop?
