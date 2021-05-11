@@ -35,14 +35,16 @@ const Services = () => {
             services.map( (service) => {
                 const {title, price, slug, id, shortDescription} = service
                 const image = getImage(service.image);
-                return <article key={id}>
+                return <Link key={id} to={`/products/${slug}`}>
+                  <article>
                     <GatsbyImage image={image} alt={`${title} image`} />
-                      <h3>{title}
-                          <span>${price}/hour</span>
+                      <h3>
+                        {title}
+                        <span>&euro;{price}/hour</span>
                       </h3>
                       <p>{shortDescription}</p>
-                    <Link to={`/products/${slug}`}>{`More details about ${title}`}</Link>
                 </article>
+                </Link>
             })
           }
           </div>
