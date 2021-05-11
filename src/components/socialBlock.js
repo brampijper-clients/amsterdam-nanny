@@ -17,8 +17,8 @@ instagram: allInstagramContent(limit: 12) {
        localImage {
          childImageSharp {
            gatsbyImageData(
-               layout: CONSTRAINED
                placeholder: BLURRED
+               layout: CONSTRAINED
            )
          }
        }
@@ -44,8 +44,8 @@ const ContentBlock = () => {
                     edges.map( ({node} ) => {
                         const image = getImage(node.localImage);
                         return (
-                            <a href={node.permalink} target='_blank' rel="noreferrer">
-                                <GatsbyImage image={image} alt={node.id} key={node.id} />
+                            <a key={node.id} href={node.permalink} target='_blank' rel="noreferrer">
+                                <GatsbyImage image={image} alt={node.id} />
                             </a>
                         )
                     })
