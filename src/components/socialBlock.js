@@ -5,20 +5,26 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as styles from './css/social-block.module.css'
 
 const getData = graphql`
-query getInstagramContent {
-    content: contentfulHomepage {
-        title: instagramTitle
-    }
-    instagram: allInstaNode(limit: 12) {
-        nodes {
-          id
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-    }
+query getInstaContent {
+content: contentfulHomepage {
+    title: instagramTitle
+}
+instagram: allInstagramContent(limit: 12) {
+    edges {
+     node {
+      permalink
+      id
+       localImage {
+         childImageSharp {
+           gatsbyImageData(
+               layout: CONSTRAINED
+               placeholder: BLURRED
+           )
+         }
+       }
+     }
+   }
+  }
 }
 `
 
@@ -26,7 +32,7 @@ const ContentBlock = () => {
     const data = useStaticQuery(getData);
     const { 
         content: {title},
-        instagram: {nodes}
+        instagram: {edges}
     } = data
     return (
         <section className={styles.page} id="instagram">
@@ -35,9 +41,13 @@ const ContentBlock = () => {
             </div>
             <div className={styles.gallery}>
                 {
-                    nodes.map( ({id, localFile} ) => {
-                        const image = getImage(localFile);
-                        return <GatsbyImage image={image} alt={id} key={id} />
+                    edges.map( ({node} ) => {
+                        const image = getImage(node.localImage);
+                        return (
+                            <a href={node.permalink} target='_blank' rel="noreferrer">
+                                <GatsbyImage image={image} alt={node.id} key={node.id} />
+                            </a>
+                        )
                     })
                 }
             </div>
