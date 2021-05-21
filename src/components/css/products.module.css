@@ -72,7 +72,7 @@
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1250px) {
     .page div {
         grid-template-columns: 1fr 1fr 1fr;
     }
