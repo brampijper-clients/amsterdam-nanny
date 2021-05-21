@@ -3,7 +3,6 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import './css/layout.css'
 
-
 const layout = ({children, hideMenu}) => {
     return (
         <>
