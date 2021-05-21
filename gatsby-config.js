@@ -16,7 +16,7 @@ module.exports = {
         name: 'Amsterdam nanny',
         short_name: 'Amsterdam nanny',
         start_url: '/',
-        icon: 'src/images/favicon.jpg',
+        icon: 'src/images/favicon.png',
       },
     },
     {
