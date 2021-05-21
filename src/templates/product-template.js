@@ -13,7 +13,7 @@ const productTemplate = ({ data: {product: {title, price, buttonText, image,  de
         <Layout hideMenu={true}>
             <section className={styles.page}>
                 <article>
-                    <GatsbyImage image={productImage} alt={`${title} image`} />
+                    <GatsbyImage style={{maxHeight: `350px`}} image={productImage} alt={`${title} image`} />
                     <div>
                         <Link to="/">back to Home</Link>
                     </div>
@@ -24,7 +24,9 @@ const productTemplate = ({ data: {product: {title, price, buttonText, image,  de
                         <h3>&euro;{price}/hour</h3>
                     </div>
                     <MarkdownView markdown={text} />
-                    <Button secondary>{buttonText} </Button>
+                    <Button secondary email="info@thenannyamsterdam.com">
+                        {buttonText} 
+                    </Button>
                 </article>
             </section>
         </Layout>

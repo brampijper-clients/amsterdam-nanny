@@ -23,7 +23,9 @@ const Header = () => {
         <section className={styles.page} id="header">
             <div>
                 <h1>{headline}</h1>
-                <Button>{btnText}</Button>
+                <Button email="info@thenannyamsterdam.com">
+                    {btnText}
+                </Button>
             </div>
       </section>
     )

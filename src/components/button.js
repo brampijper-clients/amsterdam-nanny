@@ -35,8 +35,8 @@ const StyledButton = styled.button`
 `
 
 // hardcoded email here? not good I guess? Also EVERY button will now have the onclick, maybe pass it as a prop?
-const Button = ({ secondary, children }) => {
-    return <StyledButton onClick={ () => window.location = "mailto:info@thenannyamsterdam.com" } secondary={secondary}>{children}</StyledButton>
+const Button = ({ secondary, children, email }) => {
+    return <StyledButton onClick={ () => window.location = `mailto:${email}` } secondary={secondary}>{children}</StyledButton>
 }
 
 export default Button;
