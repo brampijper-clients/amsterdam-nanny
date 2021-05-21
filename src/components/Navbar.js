@@ -13,6 +13,7 @@ query getLogo {
             gatsbyImageData(
                 placeholder: BLURRED
                 layout: CONSTRAINED
+                height: 94
             )
         }
     }
