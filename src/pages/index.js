@@ -6,10 +6,11 @@ import Header from '../components/Header'
 import Services from './products'
 import AboutMe from '../components/aboutMe'
 import SocialBlock from '../components/socialBlock'
-
+import BgComponent from '../components/bgComponent'
 
 const Home = () => (
   <Layout hideMenu={false}>
+  <BgComponent />
 
     <div className="page-wrap">
       <Header />
