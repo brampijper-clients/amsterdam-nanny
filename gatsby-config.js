@@ -11,6 +11,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Amsterdam nanny',
+        short_name: 'Amsterdam nanny',
+        start_url: '/',
+        icon: 'src/images/favicon.jpg',
+      },
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
