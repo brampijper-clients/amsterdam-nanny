@@ -3,7 +3,7 @@
 .page {
     height: auto;
     margin: 0 auto;
-    background-color: var(--primary);
+    background-color: var(--blue);
     margin-bottom: 4rem;
     padding: 5rem 0rem;
     display: grid;
@@ -12,7 +12,6 @@
 }
 
 .page h1 {
-    /* color: #EDF5E1; */
     font-size: 6rem;
     margin: 0 0 2rem 0;
     padding: 0;

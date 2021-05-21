@@ -4,14 +4,13 @@
     height: auto;
     margin: 0 auto;
     padding: 5rem;
-    background-color:var(--primary);
+    background-color: var(--yellow);
     margin-bottom: 8rem;
-    border: 1px solid var(--secondary);
     margin-bottom: 4rem;
 }
 
 .page h2 {
-    color: var(--secondary);
+    color: black;
     font-size: 6rem;
     padding: 0;
     margin-bottom: 2rem;
@@ -26,7 +25,7 @@
 }
 
 .page p { 
-    color: whitesmoke;
+    color: black;
     font-size: 1.7rem;
     margin: 1.5rem 0;
     max-width: 600px;
