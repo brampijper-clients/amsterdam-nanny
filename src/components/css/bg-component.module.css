@@ -1,0 +1,13 @@
+.page {
+    top: 100px;
+    z-index: -1;
+    background-size: contain;
+    height: 100%; 
+    background-repeat: repeat-y;
+}
+
+@media screen and (max-width: 768px) {
+    .page {
+        background-size: 100vw 100vh !important;
+    }
+}
