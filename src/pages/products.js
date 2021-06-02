@@ -19,6 +19,10 @@ query retrieveServices {
       }
     }
   }
+  
+  contentfulHomepage {
+    dienstenTitle
+  }
 }
 `
 
@@ -29,7 +33,7 @@ const Services = () => {
     } = data
     return <>
         <section className={styles.page} id="services">
-          <h2> My Services</h2>
+          <h2>{data.contentfulHomepage.dienstenTitle}</h2>
           <div className="wrapper">
           {
             services.map( (service) => {
