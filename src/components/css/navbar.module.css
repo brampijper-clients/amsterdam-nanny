@@ -45,7 +45,7 @@
 }
 
 .navbar li a:hover, .mobile li a:hover {
-    color: var(--yellow);
+    color: var(--purple);
 }
 
 .hamburger {
