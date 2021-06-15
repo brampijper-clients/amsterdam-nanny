@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'BitthaiScript';
+    src:  url('../../fonts/Bitthai-Script.woff2') format('woff2'),
+          url('../../fonts/Bitthai-Script.woff') format('woff');
+}
 @import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 @import './colors.css';
 
@@ -9,7 +14,7 @@ html {
 }
 
 body {
-    font-family:"Alice", serif;
+    font-family:'Alice', serif;
     background-color: var(--base);
 }
 
@@ -20,6 +25,10 @@ main {
 
 h1, h2 {
     color: var(--black);
+}
+
+.bitthai-script {
+    font-family: 'BitthaiScript', serif;
 }
 
 .page-wrap {
