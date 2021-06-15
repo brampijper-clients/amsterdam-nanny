@@ -40,13 +40,13 @@ const Navbar = ({hideMenu}) => {
                     <AnchorLink to="/#header" title="home" />
                 </li>
                 <li>
-                    <AnchorLink to="/#services" title="services" />
+                    <AnchorLink to="/#services" title="mijn diensten" />
                 </li>
                 <li>
-                    <AnchorLink to="/#aboutme" title="about me" />
+                    <AnchorLink to="/#aboutme" title="mijn verhaal" />
                 </li>
                 <li>
-                    <AnchorLink to="/#instagram" title="instagram" />
+                    <AnchorLink to="/#instagram" title="mijn instagram" />
                 </li>
             </ul>
     } 
@@ -58,10 +58,10 @@ const Navbar = ({hideMenu}) => {
                 <AnchorLink to="/#header" title="home" />
             </li>
             <li>
-                <AnchorLink to="/#services" title="services" />
+                <AnchorLink to="/#services" title="diensten" />
             </li>
             <li>
-                <AnchorLink to="/#aboutme" title="about me" />
+                <AnchorLink to="/#aboutme" title="mijn verhaal" />
             </li>
             <li>
                 <AnchorLink to="/#instagram" title="instagram" />
