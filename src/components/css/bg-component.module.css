@@ -4,6 +4,7 @@
     background-size: contain;
     height: 100%; 
     background-repeat: repeat-y;
+    overflow:hidden;
 }
 
 @media screen and (max-width: 768px) {
