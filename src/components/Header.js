@@ -8,6 +8,7 @@ const getData = graphql`
 query getHeadline {
     contentfulHeader {
         headline
+        headlineSubtitle
         headlineButtonText
       }
     }
@@ -16,29 +17,20 @@ query getHeadline {
 const Header = () => {
     const data = useStaticQuery(getData)
     const {
-        contentfulHeader: {headline, headlineButtonText: btnText}
+        contentfulHeader: {headline, headlineSubtitle, headlineButtonText: btnText}
     } = data
-
-    function splitHeadline() {
-        if(headline.startsWith('Flexibel Nanny')) {
-            const headlineArr = headline.split(' ');
-            const firstTwoWords = headlineArr[0].concat(' ', headlineArr[1]);    
-            const restOfHeadline = headlineArr.slice(2).join(' ');
-            return (
-                <h1 className="title">
-                    <span className="bitthai-script">{firstTwoWords}</span>
-                    <span>{restOfHeadline}</span>
-                </h1>
-            )
-        }
-    }
-
-
 
     return (
         <section className={styles.page} id="header">
             <div>
-                {splitHeadline()}
+                <h1>
+                    <span className="bitthai-script">
+                        {headline}
+                    </span>
+                    <span>
+                        {headlineSubtitle}    
+                    </span>
+                </h1>
                 <Button email="info@thenannyamsterdam.com">
                     {btnText}
                 </Button>
