@@ -13,7 +13,7 @@ const productTemplate = ({ data: {product: {title, price, buttonText, image,  de
         <Layout hideMenu={true}>
             <section className={styles.page}>
                 <article>
-                    <GatsbyImage style={{maxHeight: `350px`}} image={productImage} alt={`${title} image`} />
+                    <GatsbyImage style={{maxHeight: `350px`, maxWidth: `500px`}} image={productImage} alt={`${title} image`} />
                     <div>
                         <Link to="/">back to Home</Link>
                     </div>
