@@ -8,6 +8,7 @@ const getData = graphql`
 query getHeadline {
     contentfulHeader {
         headline
+        headlineSubtitle
         headlineButtonText
       }
     }
@@ -16,13 +17,20 @@ query getHeadline {
 const Header = () => {
     const data = useStaticQuery(getData)
     const {
-        contentfulHeader: {headline, headlineButtonText: btnText}
+        contentfulHeader: {headline, headlineSubtitle, headlineButtonText: btnText}
     } = data
 
     return (
         <section className={styles.page} id="header">
             <div>
-                <h1>{headline}</h1>
+                <h1>
+                    <span className="bitthai-script">
+                        {headline}
+                    </span>
+                    <span>
+                        {headlineSubtitle}    
+                    </span>
+                </h1>
                 <Button email="info@thenannyamsterdam.com">
                     {btnText}
                 </Button>

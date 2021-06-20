@@ -7,14 +7,23 @@
     margin-bottom: 4rem;
     padding: 5rem 0rem;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr;
     align-items:center;
 }
 
-.page h1 {
+.page span:first-child {
     font-size: 6rem;
-    margin: 0 0 2rem 0;
+}
+
+.page span:last-child {
+    font-size: 3rem;
+}
+
+.page h1 {
+    margin: 0 0 3rem 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
@@ -29,7 +38,10 @@
     .page {
         padding: 4rem 2rem;
     }
-    .page h1 {
+    .page span:first-child {
         font-size: 3.5rem;
+    }
+    .page span:last-child {
+        font-size: 2.5rem;
     }
 }
