@@ -9,6 +9,7 @@ query getHeadline {
     contentfulHeader {
         headline
         headlineSubtitle
+        subtitle
         headlineButtonText
       }
     }
@@ -17,9 +18,12 @@ query getHeadline {
 const Header = () => {
     const data = useStaticQuery(getData)
     const {
-        contentfulHeader: {headline, headlineSubtitle, headlineButtonText: btnText}
+        contentfulHeader: {headline, headlineSubtitle, subtitle, headlineButtonText: btnText}
     } = data
 
+    //friendly nanny
+    //
+    //around your corner in Amsterdam
     return (
         <section className={styles.page} id="header">
             <div>
@@ -27,8 +31,11 @@ const Header = () => {
                     <span className="bitthai-script">
                         {headline}
                     </span>
-                    <span>
+                    <span className="headline-subtitle">
                         {headlineSubtitle}    
+                    </span>
+                    <span className="subtitle">
+                        {subtitle}   
                     </span>
                 </h1>
                 <Button email="info@thenannyamsterdam.com">
