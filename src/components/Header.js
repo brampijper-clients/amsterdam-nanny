@@ -38,7 +38,7 @@ const Header = () => {
                         {subtitle}   
                     </span>
                 </h1>
-                <Button email="info@thenannyamsterdam.com">
+                <Button email="sarah.thenannyamsterdam@gmail.com">
                     {btnText}
                 </Button>
             </div>

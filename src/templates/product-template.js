@@ -24,7 +24,7 @@ const productTemplate = ({ data: {product: {title, price, buttonText, image,  de
                         <h3>&euro;{price}/hour</h3>
                     </div>
                     <MarkdownView markdown={text} />
-                    <Button secondary email="info@thenannyamsterdam.com">
+                    <Button secondary email="sarah.thenannyamsterdam@gmail.com">
                         {buttonText} 
                     </Button>
                 </article>
