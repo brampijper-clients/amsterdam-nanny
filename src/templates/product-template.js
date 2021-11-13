@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import Button from '../components/button'
 import * as styles from '../components/css/single-product.module.css'
 
-const productTemplate = ({ data: {product: {title, price, buttonText, image,  description:{text}}}}) => {
+const productTemplate = ({ data: {product: {title, price, buttonEmailText, buttonWhatsappText, image,  description:{text}}}}) => {
     const productImage = getImage(image);
     return (
         <Layout hideMenu={true}>
@@ -24,9 +24,15 @@ const productTemplate = ({ data: {product: {title, price, buttonText, image,  de
                         <h3>&euro;{price}/hour</h3>
                     </div>
                     <MarkdownView markdown={text} />
-                    <Button secondary email="sarah.thenannyamsterdam@gmail.com">
-                        {buttonText} 
+
+                    <div className={styles.buttons}>
+                    <Button secondary email="info@thenannyamsterdam.com">
+                        {buttonEmailText} 
                     </Button>
+                    <Button secondary mobile="31648740662">
+                        {buttonWhatsappText}
+                    </Button>
+                    </div>
                 </article>
             </section>
         </Layout>
@@ -38,7 +44,8 @@ export const query = graphql`
         product: contentfulService(slug: {eq: $slug}) {
           title
           price
-          buttonText
+          buttonEmailText
+          buttonWhatsappText
           description: childContentfulServiceLongDescriptionTextNode {
             text: longDescription
           }

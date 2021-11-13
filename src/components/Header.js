@@ -10,7 +10,8 @@ query getHeadline {
         headline
         headlineSubtitle
         subtitle
-        headlineButtonText
+        buttonEmailText
+        buttonWhatsappText
       }
     }
 `
@@ -18,15 +19,12 @@ query getHeadline {
 const Header = () => {
     const data = useStaticQuery(getData)
     const {
-        contentfulHeader: {headline, headlineSubtitle, subtitle, headlineButtonText: btnText}
+        contentfulHeader: {headline, headlineSubtitle, subtitle, buttonEmailText, buttonWhatsappText}
     } = data
 
-    //friendly nanny
-    //
-    //around your corner in Amsterdam
     return (
         <section className={styles.page} id="header">
-            <div>
+            <div className="container">
                 <h1>
                     <span className="bitthai-script">
                         {headline}
@@ -38,9 +36,14 @@ const Header = () => {
                         {subtitle}   
                     </span>
                 </h1>
-                <Button email="sarah.thenannyamsterdam@gmail.com">
-                    {btnText}
-                </Button>
+                <div className={styles.buttons}>
+                    <Button email="info@thenannyamsterdam.com">
+                        {buttonEmailText}
+                    </Button>
+                    <Button mobile="31648740662">
+                        {buttonWhatsappText}
+                    </Button>
+                </div>
             </div>
       </section>
     )

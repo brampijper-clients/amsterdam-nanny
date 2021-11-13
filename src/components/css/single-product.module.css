@@ -26,6 +26,12 @@
     line-height: 1.4em;
 }
 
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
 @media screen and (min-width: 992px){
     .page {
         display:grid;
@@ -50,5 +56,13 @@
 
     .wrap h1 {
         margin-bottom: 1rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        max-width: 500px;
     }
 }
